@@ -1,0 +1,169 @@
+/* Reset/Basic Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #0e0e0e; /* Dark background */
+  color: #ffffff;
+  /* Removed flex centering so we can manually align elements. */
+}
+
+/* Wrapper: center the title & audio controls */
+.wrapper {
+  text-align: center; /* horizontally centers h1 and .audio-controls inside */
+  padding: 20px;
+}
+
+/* Neon Title */
+.neon-title {
+  font-family: 'PressStart2P', sans-serif;
+  font-size: 3rem;
+  color: #0ff; /* Cyan color for a 'neon' feel */
+  text-shadow:
+    0 0 5px rgba(0, 255, 255, 0.7),
+    0 0 10px rgba(0, 255, 255, 0.5),
+    0 0 20px rgba(0, 255, 255, 0.3);
+  margin-bottom: 30px;
+}
+
+/* Audio Controls */
+.audio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers the label + slider horizontally */
+  gap: 10px;
+  margin-bottom: 20px; /* add space before the building */
+}
+
+.audio-controls label {
+  font-family: 'PressStart2P', sans-serif;
+  color: #0ff; /* Neon cyan color */
+  text-shadow: 
+    0 0 2px rgba(0, 255, 255, 0.8),
+    0 0 4px rgba(0, 255, 255, 0.6);
+  font-weight: bold;
+  margin-right: 10px; /* Spacing between label and slider */
+  letter-spacing: 1px; /* Subtle spacing for a techno vibe */
+  text-transform: uppercase; /* Optional: make it all-caps */
+}
+
+/* Scene: push building to the right */
+.scene {
+  /* This margin approach aligns the .scene block flush right
+     if there's extra horizontal space in the window. */
+  margin-left: auto;
+  margin-right: 0;
+
+  /* If you want a fixed width so the building doesn't stretch beyond 800px: */
+  width: 800px;
+}
+
+/* Building facade image */
+.building-facade {
+  display: block;           /* Removes default inline spacing below images */
+  width: 800px;            /* scale up or down as desired */
+  height: auto;
+  image-rendering: pixelated; /* Keep that retro crispness */
+}
+
+/* fonts (example) */
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('../assets/fonts/PressStart2P-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Silkscreen';
+  src: url('../assets/fonts/Silkscreen-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Silkscreen';
+  src: url('../assets/fonts/Silkscreen-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'VT323';
+  src: url('../assets/fonts/VT323-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Volume Slider Base */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 6px;
+  background: #333;
+  outline: none;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  margin: 0 10px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #444;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #0ff;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+  margin-top: -5px;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #444;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #0ff;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+}
+
+/* IE / Edge */
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #0ff;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+}
+input[type="range"]::-ms-fill-lower {
+  background: #444;
+  border-radius: 3px;
+}
+input[type="range"]::-ms-fill-upper {
+  background: #444;
+  border-radius: 3px;
+}

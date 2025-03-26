@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neon Dreams</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- Wrap the title and audio controls so they can be centered -->
+  <div class="wrapper">
+    <h1 class="neon-title">Neon Dreams</h1>
+    
+    <div class="audio-controls">
+      <label for="volumeSlider">Volume</label>
+      <input
+        type="range"
+        id="volumeSlider"
+        min="0"
+        max="1"
+        step="0.1"
+        value="0"
+      />
+      <audio
+        id="bg-music"
+        src="assets/audio/dreamscape-nocturne.mp3"
+        loop
+        autoplay
+      ></audio>
+    </div>
+  </div>
+
+  <!-- Separate div for the building image, aligned to the right -->
+  <div class="scene">
+    <img
+      class="building-facade"
+      src="assets/images/building.png"
+      alt="Neon Dreams Building"
+    />
+  </div>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    const slider = document.getElementById('volumeSlider');
+
+    // Explicitly set both slider and audio volume to 0 on page load:
+    slider.value = 0;
+    audio.volume = 0;
+
+    // Let the user raise volume by sliding
+    slider.addEventListener('input', () => {
+      audio.volume = slider.value;
+    });
+  </script>
+</body>
+</html>
