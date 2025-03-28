@@ -51,24 +51,34 @@ body {
   text-transform: uppercase; /* Optional: make it all-caps */
 }
 
-/* Scene: push building to the right */
-.scene {
-  /* This margin approach aligns the .scene block flush right
-     if there's extra horizontal space in the window. */
-  margin-left: auto;
-  margin-right: 0;
-
-  /* If you want a fixed width so the building doesn't stretch beyond 800px: */
-  width: 800px;
+.parallax-wrapper {
+  position: relative;
+  width: 800px;        /* 200px × 4 */
+  height: 1400px;       /* 350px × 4 */
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-/* Building facade image */
+.city-background,
 .building-facade {
-  display: block;           /* Removes default inline spacing below images */
-  width: 800px;            /* scale up or down as desired */
-  height: auto;
-  image-rendering: pixelated; /* Keep that retro crispness */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px;
+  height: 1400px;
+  image-rendering: pixelated; /* maintain retro sharpness */
 }
+
+.city-background {
+  z-index: 0;
+  transform: translateY(0px);
+}
+
+.building-facade {
+  z-index: 1;
+}
+
+
 
 /* fonts (example) */
 @font-face {

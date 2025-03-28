@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Wrap the title and audio controls so they can be centered -->
   <div class="wrapper">
     <h1 class="neon-title">Neon Dreams</h1>
     
@@ -31,14 +30,10 @@
     </div>
   </div>
 
-  <!-- Separate div for the building image, aligned to the right -->
-  <div class="scene">
-    <img
-      class="building-facade"
-      src="assets/images/building-v2.png"
-      alt="Neon Dreams Building"
-    />
-  </div>
+  <div class="parallax-wrapper">
+    <img class="city-background" src="assets/images/city-background-v1.png" alt="City Skyline" />
+    <img class="building-facade" src="assets/images/building-v2.png" alt="Neon Dreams Building" />
+  </div>  
 
   <script>
     const audio = document.getElementById('bg-music');
@@ -53,5 +48,14 @@
       audio.volume = slider.value;
     });
   </script>
+
+  <script>
+    const bg = document.querySelector('.city-background');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      bg.style.transform = `translateY(${scrollY * 0.3}px)`; // Scrolls slower
+    });
+  </script>
+
 </body>
 </html>
