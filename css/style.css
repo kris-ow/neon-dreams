@@ -22,7 +22,7 @@ body {
 .neon-title {
   font-family: 'PressStart2P', sans-serif;
   font-size: 3rem;
-  color: #0ff; /* Cyan color for a 'neon' feel */
+  color: #24bfb9; /* Cyan color for a 'neon' feel */
   text-shadow:
     0 0 5px rgba(0, 255, 255, 0.7),
     0 0 10px rgba(0, 255, 255, 0.5),
@@ -41,7 +41,7 @@ body {
 
 .audio-controls label {
   font-family: 'PressStart2P', sans-serif;
-  color: #0ff; /* Neon cyan color */
+  color: #24bfb9; /* Neon cyan color */
   text-shadow: 
     0 0 2px rgba(0, 255, 255, 0.8),
     0 0 4px rgba(0, 255, 255, 0.6);
@@ -120,7 +120,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  background: #0ff;
+  background: #24bfb9;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
   margin-top: -5px;
@@ -137,7 +137,7 @@ input[type="range"]::-moz-range-thumb {
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  background: #0ff;
+  background: #24bfb9;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
 }
@@ -155,7 +155,7 @@ input[type="range"]::-ms-thumb {
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  background: #0ff;
+  background: #24bfb9;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
 }
