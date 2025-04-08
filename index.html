@@ -7,53 +7,58 @@
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-
-  <div class="wrapper">
-    <h1 class="neon-title">Neon Dreams</h1>
-    
-    <div class="audio-controls">
-      <label for="volumeSlider">Volume</label>
-      <input
-        type="range"
-        id="volumeSlider"
-        min="0"
-        max="1"
-        step="0.1"
-        value="0"
-      />
-      <audio
+  <audio
         id="bg-music"
         src="assets/audio/dreamscape-nocturne.mp3"
         loop
         autoplay
-      ></audio>
-    </div>
-  </div>
+      >
+  </audio>
 
   <div class="parallax-wrapper">
-    <img class="city-background" src="assets/images/city-background-v1.png" alt="City Skyline" />
-    <img class="building-facade" src="assets/images/building-v2.png" alt="Neon Dreams Building" />
+    <img 
+      class="city-background" 
+      src="assets/images/city-background-v1.png" 
+      alt="City Skyline" 
+    />
+    <img 
+    ` id="building-image"
+      class="building-facade" 
+      src="assets/images/building-v3-off.png" 
+      alt="Neon Dreams Building" 
+    />
+    <!-- Clickable Play Button Overlay -->
+    <div id="play-button" class="play-button" aria-label="Toggle Music"></div>
   </div>  
 
   <script>
+    const playButton = document.getElementById('play-button');
+    const buildingImage = document.getElementById('building-image');
     const audio = document.getElementById('bg-music');
-    const slider = document.getElementById('volumeSlider');
 
-    // Explicitly set both slider and audio volume to 0 on page load:
-    slider.value = 0;
-    audio.volume = 0;
+    let isPlaying = false;
 
-    // Let the user raise volume by sliding
-    slider.addEventListener('input', () => {
-      audio.volume = slider.value;
+    // Ensure audio starts paused
+    audio.volume = 1;
+    audio.pause();
+
+    playButton.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+
+      if (isPlaying) {
+        audio.play();
+        buildingImage.src = 'assets/images/building-v3-on.png';
+      } else {
+        audio.pause();
+        buildingImage.src = 'assets/images/building-v3-off.png';
+      }
     });
-  </script>
 
-  <script>
+    // Parallax scroll for background
     const bg = document.querySelector('.city-background');
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-      bg.style.transform = `translateY(${scrollY * 0.3}px)`; // Scrolls slower
+      bg.style.transform = `translateY(${scrollY * 0.3}px)`;
     });
   </script>
 
