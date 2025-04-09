@@ -7,35 +7,38 @@
 
 body {
   font-family: sans-serif;
-  background: #0e0e0e; /* Dark background */
+  background: #0e0e0e;
   color: #ffffff;
-  /* Removed flex centering so we can manually align elements. */
 }
 
 /* Wrapper: center the title & audio controls */
 .wrapper {
-  text-align: center; /* horizontally centers h1 and .audio-controls inside */
+  text-align: center;
   padding: 20px;
 }
 
 .parallax-wrapper {
   position: relative;
   width: 800px;        /* 200px × 4 */
-  height: 1400px;       /* 350px × 4 */
+  height: 1800px;       /* 450px × 4 */
   margin: 0 auto;
   overflow: hidden;
 }
 
 .city-background,
-.building-facade {
+.building-facade,
+.billboard-base,
+.billboard-contents,
+.billboard-play {
   position: absolute;
   top: 0;
   left: 0;
   width: 800px;
-  height: 1400px;
+  height: 1800px;
   image-rendering: pixelated; /* maintain retro sharpness */
 }
 
+/* Layer ordering */
 .city-background {
   z-index: 0;
   transform: translateY(0px);
@@ -43,6 +46,18 @@ body {
 
 .building-facade {
   z-index: 1;
+}
+
+.billboard-base {
+  z-index: 2; /* on top of the building */
+}
+
+.billboard-contents {
+  z-index: 3; /* on top of billboard frame */
+}
+
+.billboard-play {
+  z-index: 3; /* on top of billboard frame */
 }
 
 .play-button {

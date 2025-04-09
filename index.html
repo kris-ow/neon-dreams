@@ -16,24 +16,52 @@
   </audio>
 
   <div class="parallax-wrapper">
+    <!-- Background -->
     <img 
       class="city-background" 
-      src="assets/images/city-background-v1.png" 
+      src="assets/images/city-background-v2.png" 
       alt="City Skyline" 
     />
+
+    <!-- Building image -->
     <img 
-    ` id="building-image"
+      id="building-image"
       class="building-facade" 
-      src="assets/images/building-v3-off.png" 
+      src="assets/images/building-v4.png" 
       alt="Neon Dreams Building" 
     />
+
+    <!-- Billboard base -->
+    <img 
+      id="billboard-base"
+      class="billboard-base"
+      src="assets/images/billboard/building-v4-billboard.png"
+      alt="Billboard Frame"
+    />
+
+    <!-- Billboard contents -->
+    <img 
+      id="billboard-contents"
+      class="billboard-contents"
+      src="assets/images/billboard/building-v4-billboard-content.png"
+      alt="Billboard Contents"
+    />
+
+    <!-- Billboard Play button -->
+    <img 
+      id="billboard-play"
+      class="billboard-play"
+      src="assets/images/billboard/building-v4-billboard-play-off.png"
+      alt="Billboard Contents"
+    />
+    
     <!-- Clickable Play Button Overlay -->
     <div id="play-button" class="play-button" aria-label="Toggle Music"></div>
   </div>  
 
   <script>
     const playButton = document.getElementById('play-button');
-    const buildingImage = document.getElementById('building-image');
+    const playImage = document.getElementById('billboard-play');
     const audio = document.getElementById('bg-music');
 
     let isPlaying = false;
@@ -47,10 +75,10 @@
 
       if (isPlaying) {
         audio.play();
-        buildingImage.src = 'assets/images/building-v3-on.png';
+        playImage.src = 'assets/images/billboard/building-v4-billboard-play-on.png';
       } else {
         audio.pause();
-        buildingImage.src = 'assets/images/building-v3-off.png';
+        playImage.src = 'assets/images/billboard/building-v4-billboard-play-off.png';
       }
     });
 
