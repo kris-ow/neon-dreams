@@ -7,29 +7,14 @@
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <audio
-        id="bg-music"
-        src="assets/audio/dreamscape-nocturne.mp3"
-        loop
-        autoplay
-      >
-  </audio>
+  <audio id="bg-music"src="assets/audio/dreamscape-nocturne.mp3" loop autoplay></audio>
 
   <div class="parallax-wrapper">
     <!-- Background -->
-    <img 
-      class="city-background" 
-      src="assets/images/city-background-v2.png" 
-      alt="City Skyline" 
-    />
+    <img class="city-background" src="assets/images/city-background-v2.png" alt="City Skyline"/>
 
     <!-- Building image -->
-    <img 
-      id="building-image"
-      class="building-facade" 
-      src="assets/images/building-v4.png" 
-      alt="Neon Dreams Building" 
-    />
+    <img id="building-image" class="building-facade" src="assets/images/building-v4.png" alt="Neon Dreams Building"/>
 
     <!-- Billboard base -->
     <img 
@@ -59,46 +44,7 @@
     <div id="play-button" class="play-button" aria-label="Toggle Music"></div>
   </div>  
 
-  <script>
-    const playButton = document.getElementById('play-button');
-    const playImage = document.getElementById('billboard-play');
-    const audio = document.getElementById('bg-music');
-
-    let isPlaying = false;
-    audio.volume = 1;
-    audio.pause();
-
-    // Load billboard metadata from JSON
-    fetch('assets/data/billboard.json')
-      .then(res => res.json())
-      .then(data => {
-        const btn = data.playButton;
-        playButton.style.top = btn.y + 'px';
-        playButton.style.left = btn.x + 'px';
-        playButton.style.width = btn.width + 'px';
-        playButton.style.height = btn.height + 'px';
-        playButton.style.zIndex = btn.zIndex;
-      });
-
-    playButton.addEventListener('click', () => {
-      isPlaying = !isPlaying;
-
-      if (isPlaying) {
-        audio.play();
-        playImage.src = 'assets/images/billboard/building-v4-billboard-play-on.png';
-      } else {
-        audio.pause();
-        playImage.src = 'assets/images/billboard/building-v4-billboard-play-off.png';
-      }
-    });
-
-    // Parallax scroll for background
-    const bg = document.querySelector('.city-background');
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      bg.style.transform = `translateY(${scrollY * 0.3}px)`;
-    });
-  </script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
