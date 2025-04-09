@@ -1,0 +1,12 @@
+{
+    "playButton": {
+      "x": 562,
+      "y": 90,
+      "width": 56,
+      "height": 68,
+      "zIndex": 4,
+      "onImage": "assets/images/billboard/building-v4-billboard-play-on.png",
+      "offImage": "assets/images/billboard/building-v4-billboard-play-off.png"
+    }
+  }
+  

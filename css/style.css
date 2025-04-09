@@ -62,12 +62,7 @@ body {
 
 .play-button {
   position: absolute;
-  top: 90px;     /* adjust as needed */
-  left: 562px;   /* adjust as needed */
-  width: 56px;
-  height: 68px;
   cursor: pointer;
-  z-index: 3;    /* above building image */
 }
 
 /* fonts (example) */

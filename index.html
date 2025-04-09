@@ -65,10 +65,20 @@
     const audio = document.getElementById('bg-music');
 
     let isPlaying = false;
-
-    // Ensure audio starts paused
     audio.volume = 1;
     audio.pause();
+
+    // Load billboard metadata from JSON
+    fetch('assets/data/billboard.json')
+      .then(res => res.json())
+      .then(data => {
+        const btn = data.playButton;
+        playButton.style.top = btn.y + 'px';
+        playButton.style.left = btn.x + 'px';
+        playButton.style.width = btn.width + 'px';
+        playButton.style.height = btn.height + 'px';
+        playButton.style.zIndex = btn.zIndex;
+      });
 
     playButton.addEventListener('click', () => {
       isPlaying = !isPlaying;
