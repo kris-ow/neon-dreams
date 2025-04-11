@@ -55,7 +55,9 @@ body {
   z-index: 3; /* on top of billboard frame */
 }
 
-.play-button {
+.play-button,
+.back-button {
   position: absolute;
   cursor: pointer;
+  background-color: rgba(50,50,50,0.3);
 }

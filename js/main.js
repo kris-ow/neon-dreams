@@ -2,11 +2,20 @@ console.log("Welcome to the Neon Dreams!");
 
 const playButton = document.getElementById('play-button');
 const playImage = document.getElementById('billboard-play');
+const prevBtn = document.getElementById('billboard-back');
+const nextBtn = document.getElementById('billboard-next');
 const audio = document.getElementById('bg-music');
 
 let isPlaying = false;
 audio.volume = 1;
 audio.pause();
+
+const tracks = [
+  'assets/audio/dreamscape-nocturne.mp3',
+  'assets/audio/highway-of-light.mp3'
+];
+let currentTrackIndex = 1;
+audio.src = tracks[currentTrackIndex];
 
 // Load billboard metadata from JSON
 fetch('assets/data/billboard.json')
@@ -30,6 +39,26 @@ playButton.addEventListener('click', () => {
     audio.pause();
     playImage.src = "assets/images/billboard/building-v4-1-billboard-play-off.png";
   }
+});
+
+function playTrack(index) {
+  currentTrackIndex = (index + tracks.length) % tracks.length;
+  audio.src = tracks[currentTrackIndex];
+  if (isPlaying) {
+    audio.play();
+  }
+}
+
+nextBtn.addEventListener('click', () => {
+  playTrack(currentTrackIndex + 1);
+});
+
+prevBtn.addEventListener('click', () => {
+  playTrack(currentTrackIndex - 1);
+});
+
+audio.addEventListener('ended', () => {
+  playTrack(currentTrackIndex + 1);
 });
 
 // Parallax scroll for background

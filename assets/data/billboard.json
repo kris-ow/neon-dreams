@@ -1,10 +1,18 @@
 {
-    "playButton": {
-      "x": 446,
-      "y": 154,
-      "width": 64,
-      "height": 76,
-      "zIndex": 99
-    }
+  "playButton": {
+    "x": 446,
+    "y": 154,
+    "width": 64,
+    "height": 76,
+    "zIndex": 99
+  },
+
+  "backButton": {
+    "x": 342,
+    "y": 172,
+    "width": 62,
+    "height": 46,
+    "zIndex": 99
   }
+}
   
