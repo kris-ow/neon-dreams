@@ -25,10 +25,10 @@ playButton.addEventListener('click', () => {
 
   if (isPlaying) {
     audio.play();
-    playImage.src = 'assets/images/billboard/building-v4-billboard-play-on.png';
+    playImage.src = 'assets/images/billboard/building-v4-1-billboard-play-on.png';
   } else {
     audio.pause();
-    playImage.src = 'assets/images/billboard/building-v4-billboard-play-off.png';
+    playImage.src = "assets/images/billboard/building-v4-1-billboard-play-off.png";
   }
 });
 

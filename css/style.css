@@ -11,12 +11,6 @@ body {
   color: #ffffff;
 }
 
-/* Wrapper: center the title & audio controls */
-.wrapper {
-  text-align: center;
-  padding: 20px;
-}
-
 .parallax-wrapper {
   position: relative;
   width: 800px;        /* 200px × 4 */
@@ -29,13 +23,15 @@ body {
 .building-facade,
 .billboard-base,
 .billboard-contents,
-.billboard-play {
+.billboard-play,
+.billboard-back,
+.billboard-next {
   position: absolute;
   top: 0;
   left: 0;
   width: 800px;
   height: 1800px;
-  image-rendering: pixelated; /* maintain retro sharpness */
+  image-rendering: pixelated;
 }
 
 /* Layer ordering */
@@ -52,41 +48,14 @@ body {
   z-index: 2; /* on top of the building */
 }
 
-.billboard-contents {
-  z-index: 3; /* on top of billboard frame */
-}
-
-.billboard-play {
+.billboard-contents,
+.billboard-play,
+.billboard-back,
+.billboard-next {
   z-index: 3; /* on top of billboard frame */
 }
 
 .play-button {
   position: absolute;
   cursor: pointer;
-}
-
-/* fonts (example) */
-@font-face {
-  font-family: 'PressStart2P';
-  src: url('../assets/fonts/PressStart2P-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Silkscreen';
-  src: url('../assets/fonts/Silkscreen-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Silkscreen';
-  src: url('../assets/fonts/Silkscreen-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'VT323';
-  src: url('../assets/fonts/VT323-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
