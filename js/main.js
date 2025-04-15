@@ -2,8 +2,10 @@ console.log("Welcome to the Neon Dreams!");
 
 const playButton = document.getElementById('play-button');
 const playImage = document.getElementById('billboard-play');
-const prevBtn = document.getElementById('billboard-back');
-const nextBtn = document.getElementById('billboard-next');
+const backButton = document.getElementById('back-button');
+const backImage = document.getElementById('billboard-back');
+const nextButton = document.getElementById('next-button');
+const nextImage = document.getElementById('billboard-next');
 const audio = document.getElementById('bg-music');
 
 let isPlaying = false;
@@ -27,6 +29,18 @@ fetch('assets/data/billboard.json')
     playButton.style.width = btn.width + 'px';
     playButton.style.height = btn.height + 'px';
     playButton.style.zIndex = btn.zIndex;
+    const backBtn = data.backButton;
+    backButton.style.top = backBtn.y + 'px';
+    backButton.style.left = backBtn.x + 'px';
+    backButton.style.width = backBtn.width + 'px';
+    backButton.style.height = backBtn.height + 'px';
+    backButton.style.zIndex = backBtn.zIndex;
+    const nextBtn = data.nextButton;
+    nextButton.style.top = nextBtn.y + 'px';
+    nextButton.style.left = nextBtn.x + 'px';
+    nextButton.style.width = nextBtn.width + 'px';
+    nextButton.style.height = nextBtn.height + 'px';
+    nextButton.style.zIndex = nextBtn.zIndex;
   });
 
 playButton.addEventListener('click', () => {
@@ -49,12 +63,28 @@ function playTrack(index) {
   }
 }
 
-nextBtn.addEventListener('click', () => {
+nextButton.addEventListener('click', () => {
   playTrack(currentTrackIndex + 1);
 });
 
-prevBtn.addEventListener('click', () => {
+nextButton.addEventListener('mousedown', () => {
+  nextImage.src = "assets/images/billboard/building-v4-1-billboard-next-on.png";
+});
+
+nextButton.addEventListener('mouseup', () => {
+  nextImage.src = "assets/images/billboard/building-v4-1-billboard-next-off.png";
+});
+
+backButton.addEventListener('click', () => {
   playTrack(currentTrackIndex - 1);
+});
+
+backButton.addEventListener('mousedown', () => {
+  backImage.src = "assets/images/billboard/building-v4-1-billboard-back-on.png";
+});
+
+backButton.addEventListener('mouseup', () => {
+  backImage.src = "assets/images/billboard/building-v4-1-billboard-back-off.png";
 });
 
 audio.addEventListener('ended', () => {

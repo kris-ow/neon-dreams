@@ -13,6 +13,14 @@
     "width": 62,
     "height": 46,
     "zIndex": 99
+  },
+
+  "nextButton": {
+    "x": 548,
+    "y": 172,
+    "width": 62,
+    "height": 46,
+    "zIndex": 99
   }
 }
   

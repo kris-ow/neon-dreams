@@ -56,8 +56,9 @@ body {
 }
 
 .play-button,
-.back-button {
+.back-button,
+.next-button {
   position: absolute;
   cursor: pointer;
-  background-color: rgba(50,50,50,0.3);
+  /*background-color: rgba(50,50,50,0.3);*/
 }
