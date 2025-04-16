@@ -12,9 +12,9 @@ const audio = document.getElementById('bg-music');
 const isMobile = window.innerWidth < 768;
 const scaleFactor = isMobile ? 0.5 : 1;
 
-window.addEventListener('resize', () => {
+/*window.addEventListener('resize', () => {
   location.reload();
-});
+});*/
 
 let isPlaying = false;
 audio.volume = 1;
