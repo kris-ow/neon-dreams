@@ -62,3 +62,11 @@ body {
   cursor: pointer;
   /*background-color: rgba(50,50,50,0.3);*/
 }
+
+#play-button,
+.parallax-wrapper {
+  user-select: none;
+  -moz-user-select: none;     /* Firefox */
+  -webkit-user-select: none;  /* Chrome, Safari */
+  -ms-user-select: none;      /* Edge */
+}
