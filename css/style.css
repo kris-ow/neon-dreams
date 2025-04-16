@@ -13,10 +13,17 @@ body {
 
 .parallax-wrapper {
   position: relative;
-  width: 400px;        /* 200px × 4 */
-  height: 900px;       /* 450px × 4 */
+  width: calc(200px * 4);       
+  height: calc(450px * 4);
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .parallax-wrapper {
+    width: calc(200px * 2);
+    height: calc(450px * 2);
+  }
 }
 
 .city-background,
@@ -29,9 +36,22 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 400px;
-  height: 900px;
+  width: calc(200px * 4);
+  height: calc(450px * 4);
   image-rendering: pixelated;
+}
+
+@media (max-width: 768px) {
+  .city-background,
+  .building-facade,
+  .billboard-base,
+  .billboard-contents,
+  .billboard-play,
+  .billboard-back,
+  .billboard-next {
+    width: calc(200px * 2);
+    height: calc(450px * 2);
+  }
 }
 
 /* Layer ordering */

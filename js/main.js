@@ -8,6 +8,14 @@ const nextButton = document.getElementById('next-button');
 const nextImage = document.getElementById('billboard-next');
 const audio = document.getElementById('bg-music');
 
+// Handle auto-scaling base on sceen width
+const isMobile = window.innerWidth < 768;
+const scaleFactor = isMobile ? 0.5 : 1;
+
+window.addEventListener('resize', () => {
+  location.reload();
+});
+
 let isPlaying = false;
 audio.volume = 1;
 audio.pause();
@@ -20,27 +28,20 @@ let currentTrackIndex = 1;
 audio.src = tracks[currentTrackIndex];
 
 // Load billboard metadata from JSON
+function applyButtonStyle(domElement, config) {
+  domElement.style.top = (config.y * scaleFactor) + 'px';
+  domElement.style.left = (config.x * scaleFactor) + 'px';
+  domElement.style.width = (config.width * scaleFactor) + 'px';
+  domElement.style.height = (config.height * scaleFactor) + 'px';
+  domElement.style.zIndex = config.zIndex;
+}
+
 fetch('assets/data/billboard.json')
   .then(res => res.json())
   .then(data => {
-    const btn = data.playButton;
-    playButton.style.top = btn.y + 'px';
-    playButton.style.left = btn.x + 'px';
-    playButton.style.width = btn.width + 'px';
-    playButton.style.height = btn.height + 'px';
-    playButton.style.zIndex = btn.zIndex;
-    const backBtn = data.backButton;
-    backButton.style.top = backBtn.y + 'px';
-    backButton.style.left = backBtn.x + 'px';
-    backButton.style.width = backBtn.width + 'px';
-    backButton.style.height = backBtn.height + 'px';
-    backButton.style.zIndex = backBtn.zIndex;
-    const nextBtn = data.nextButton;
-    nextButton.style.top = nextBtn.y + 'px';
-    nextButton.style.left = nextBtn.x + 'px';
-    nextButton.style.width = nextBtn.width + 'px';
-    nextButton.style.height = nextBtn.height + 'px';
-    nextButton.style.zIndex = nextBtn.zIndex;
+    applyButtonStyle(playButton, data.playButton);
+    applyButtonStyle(backButton, data.backButton);
+    applyButtonStyle(nextButton, data.nextButton);
   });
 
 playButton.addEventListener('click', () => {
