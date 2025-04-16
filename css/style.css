@@ -13,8 +13,8 @@ body {
 
 .parallax-wrapper {
   position: relative;
-  width: 800px;        /* 200px × 4 */
-  height: 1800px;       /* 450px × 4 */
+  width: 400px;        /* 200px × 4 */
+  height: 900px;       /* 450px × 4 */
   margin: 0 auto;
   overflow: hidden;
 }
@@ -29,8 +29,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 800px;
-  height: 1800px;
+  width: 400px;
+  height: 900px;
   image-rendering: pixelated;
 }
 
