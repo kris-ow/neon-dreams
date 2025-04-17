@@ -12,10 +12,6 @@ const audio = document.getElementById('bg-music');
 const isMobile = window.innerWidth < 840;
 const scaleFactor = isMobile ? 0.4 : 1;
 
-/*window.addEventListener('resize', () => {
-  location.reload();
-});*/
-
 let isPlaying = false;
 audio.volume = 1;
 audio.pause();
