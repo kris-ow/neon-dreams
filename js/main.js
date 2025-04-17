@@ -9,8 +9,8 @@ const nextImage = document.getElementById('billboard-next');
 const audio = document.getElementById('bg-music');
 
 // Handle auto-scaling base on sceen width
-const isMobile = window.innerWidth < 768;
-const scaleFactor = isMobile ? 0.5 : 1;
+const isMobile = window.innerWidth < 840;
+const scaleFactor = isMobile ? 0.4 : 1;
 
 /*window.addEventListener('resize', () => {
   location.reload();

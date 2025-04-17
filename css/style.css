@@ -19,10 +19,10 @@ body {
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 840px) {
   .parallax-wrapper {
-    width: calc(200px * 2);
-    height: calc(450px * 2);
+    width: calc(200px * 1.6);
+    height: calc(450px * 1.6);
   }
 }
 
@@ -41,7 +41,7 @@ body {
   image-rendering: pixelated;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 840px) {
   .city-background,
   .building-facade,
   .billboard-base,
@@ -49,8 +49,8 @@ body {
   .billboard-play,
   .billboard-back,
   .billboard-next {
-    width: calc(200px * 2);
-    height: calc(450px * 2);
+    width: calc(200px * 1.6);
+    height: calc(450px * 1.6);
   }
 }
 
