@@ -14,7 +14,7 @@ body {
 .parallax-wrapper {
   position: relative;
   width: calc(200px * 4);       
-  height: calc(450px * 4);
+  height: calc(650px * 4);
   margin: 0 auto;
   overflow: hidden;
 }
@@ -22,7 +22,7 @@ body {
 @media (max-width: 840px) {
   .parallax-wrapper {
     width: calc(200px * 1.6);
-    height: calc(450px * 1.6);
+    height: calc(650px * 1.6);
   }
 }
 
@@ -37,7 +37,7 @@ body {
   top: 0;
   left: 0;
   width: calc(200px * 4);
-  height: calc(450px * 4);
+  height: calc(650px * 4);
   image-rendering: pixelated;
 }
 
@@ -50,7 +50,7 @@ body {
   .billboard-back,
   .billboard-next {
     width: calc(200px * 1.6);
-    height: calc(450px * 1.6);
+    height: calc(650px * 1.6);
   }
 }
 

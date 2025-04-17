@@ -45,10 +45,10 @@ playButton.addEventListener('click', () => {
 
   if (isPlaying) {
     audio.play();
-    playImage.src = 'assets/images/billboard/building-v4-1-billboard-play-on.png';
+    playImage.src = 'assets/images/billboard/building-v4-2-billboard-play-on.png';
   } else {
     audio.pause();
-    playImage.src = "assets/images/billboard/building-v4-1-billboard-play-off.png";
+    playImage.src = "assets/images/billboard/building-v4-2-billboard-play-off.png";
   }
 });
 
@@ -66,20 +66,20 @@ nextButton.addEventListener('click', () => {
 
 // Next button "on"
 nextButton.addEventListener('mousedown', () => {
-  nextImage.src = "assets/images/billboard/building-v4-1-billboard-next-on.png";
+  nextImage.src = "assets/images/billboard/building-v4-2-billboard-next-on.png";
 });
 
 nextButton.addEventListener('touchstart', () => {
-  nextImage.src = "assets/images/billboard/building-v4-1-billboard-next-on.png";
+  nextImage.src = "assets/images/billboard/building-v4-2-billboard-next-on.png";
 }, { passive: true });
 
 // Next button "off"
 nextButton.addEventListener('mouseup', () => {
-  nextImage.src = "assets/images/billboard/building-v4-1-billboard-next-off.png";
+  nextImage.src = "assets/images/billboard/building-v4-2-billboard-next-off.png";
 });
 
 nextButton.addEventListener('touchend', () => {
-  nextImage.src = "assets/images/billboard/building-v4-1-billboard-next-off.png";
+  nextImage.src = "assets/images/billboard/building-v4-2-billboard-next-off.png";
 }, { passive: true });
 
 backButton.addEventListener('click', () => {
@@ -88,20 +88,20 @@ backButton.addEventListener('click', () => {
 
 // Back button "on"
 backButton.addEventListener('touchstart', () => {
-  backImage.src = "assets/images/billboard/building-v4-1-billboard-back-on.png";
+  backImage.src = "assets/images/billboard/building-v4-2-billboard-back-on.png";
 }, { passive: true });
 
 backButton.addEventListener('mousedown', () => {
-  backImage.src = "assets/images/billboard/building-v4-1-billboard-back-on.png";
+  backImage.src = "assets/images/billboard/building-v4-2-billboard-back-on.png";
 });
 
 // Back button "off"
 backButton.addEventListener('mouseup', () => {
-  backImage.src = "assets/images/billboard/building-v4-1-billboard-back-off.png";
+  backImage.src = "assets/images/billboard/building-v4-2-billboard-back-off.png";
 });
 
 backButton.addEventListener('touchend', () => {
-  backImage.src = "assets/images/billboard/building-v4-1-billboard-back-off.png";
+  backImage.src = "assets/images/billboard/building-v4-2-billboard-back-off.png";
 }, { passive: true });
 
 audio.addEventListener('ended', () => {
