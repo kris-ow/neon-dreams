@@ -30,9 +30,8 @@ body {
 .building-facade,
 .billboard-base,
 .billboard-contents,
-.billboard-play,
-.billboard-back,
-.billboard-next {
+.billboard-btn,
+.apartments{
   position: absolute;
   top: 0;
   left: 0;
@@ -46,9 +45,8 @@ body {
   .building-facade,
   .billboard-base,
   .billboard-contents,
-  .billboard-play,
-  .billboard-back,
-  .billboard-next {
+  .billboard-btn,
+  .apartments{
     width: calc(200px * 1.6);
     height: calc(650px * 1.6);
   }
@@ -69,9 +67,8 @@ body {
 }
 
 .billboard-contents,
-.billboard-play,
-.billboard-back,
-.billboard-next {
+.billboard-btn,
+.apartments {
   z-index: 3; /* on top of billboard frame */
 }
 
