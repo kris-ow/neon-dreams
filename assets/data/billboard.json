@@ -21,6 +21,14 @@
     "width": 62,
     "height": 46,
     "zIndex": 99
+  },
+
+  "ap3Hover": {
+    "x": 276,
+    "y": 1040,
+    "width": 200,
+    "height": 140,
+    "zIndex": 99
   }
 }
   

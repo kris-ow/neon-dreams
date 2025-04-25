@@ -31,7 +31,8 @@ body {
 .billboard-base,
 .billboard-contents,
 .billboard-btn,
-.apartments{
+.apartments,
+.ap-hover-img{
   position: absolute;
   top: 0;
   left: 0;
@@ -46,7 +47,8 @@ body {
   .billboard-base,
   .billboard-contents,
   .billboard-btn,
-  .apartments{
+  .apartments,
+  .ap-hover-img{
     width: calc(200px * 1.6);
     height: calc(650px * 1.6);
   }
@@ -72,15 +74,29 @@ body {
   z-index: 3; /* on top of billboard frame */
 }
 
+.ap-hover-img {
+  z-index: 4;
+}
+
 .play-button,
 .back-button,
-.next-button {
+.next-button,
+.ap-hover {
   position: absolute;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   touch-action: manipulation;
   /*background-color: rgba(50,50,50,0.3);*/
+}
+
+#ap3-hover-img {
+  opacity: 0;
+}
+
+#ap3-hover:hover ~ #ap3-hover-img {
+  background: url(/assets/images/apartments/apartment-3-hover.png) no-repeat center/contain;
+  opacity: 0.25;
 }
 
 #play-button,

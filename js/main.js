@@ -8,6 +8,8 @@ const nextButton = document.getElementById('next-button');
 const nextImage = document.getElementById('billboard-next');
 const audio = document.getElementById('bg-music');
 
+const ap3Hover = document.getElementById('ap3-hover');
+
 // Handle auto-scaling base on sceen width
 const isMobile = window.innerWidth < 840;
 const scaleFactor = isMobile ? 0.4 : 1;
@@ -38,6 +40,7 @@ fetch('assets/data/billboard.json')
     applyButtonStyle(playButton, data.playButton);
     applyButtonStyle(backButton, data.backButton);
     applyButtonStyle(nextButton, data.nextButton);
+    applyButtonStyle(ap3Hover, data.ap3Hover);
   });
 
 playButton.addEventListener('click', () => {
