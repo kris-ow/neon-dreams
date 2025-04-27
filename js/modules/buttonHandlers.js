@@ -45,6 +45,24 @@ function setupButtonHandlers() {
     backButton.addEventListener('touchend', () => {
       backImage.src = "assets/images/billboard/building-v4-2-billboard-back-off.png";
     }, { passive: true });
-  }
+}
   
-  export { setupButtonHandlers };
+export { setupButtonHandlers };
+
+export function setupApartmentPopup() {
+    const ap3Hover = document.getElementById('ap3-hover');
+    const popup = document.getElementById('apartment-popup');
+  
+    if (!ap3Hover || !popup) {
+      console.warn('Apartment hover or popup element not found.');
+      return;
+    }
+  
+    ap3Hover.addEventListener('click', () => {
+      popup.classList.remove('hidden');
+    });
+  
+    popup.addEventListener('click', () => {
+      popup.classList.add('hidden');
+    });
+}
