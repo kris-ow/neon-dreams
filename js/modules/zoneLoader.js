@@ -3,7 +3,7 @@ const backButton = document.getElementById('back-button');
 const nextButton = document.getElementById('next-button');
 const ap3Hover = document.getElementById('ap3-hover');
 
-let billboardData = null;
+let locationData = null;
 
 function getScaleFactor() {
   return window.innerWidth < 840 ? 0.4 : 1;
@@ -19,18 +19,18 @@ function applyButtonStyle(domElement, config) {
 }
 
 function applyAllStyles() {
-    if (!billboardData) return;
-    applyButtonStyle(playButton, billboardData.playButton);
-    applyButtonStyle(backButton, billboardData.backButton);
-    applyButtonStyle(nextButton, billboardData.nextButton);
-    applyButtonStyle(ap3Hover, billboardData.ap3Hover);
+    if (!locationData) return;
+    applyButtonStyle(playButton, locationData.playButton);
+    applyButtonStyle(backButton, locationData.backButton);
+    applyButtonStyle(nextButton, locationData.nextButton);
+    applyButtonStyle(ap3Hover, locationData.ap3Hover);
 }
 
-function loadBillboardData() {
-    fetch('assets/data/billboard.json')
+function loadInteractiveZones() {
+    fetch('assets/data/interactive-zones.json')
       .then(res => res.json())
       .then(data => {
-        billboardData = data;
+        locationData = data;
         applyAllStyles();
       });
   
@@ -39,4 +39,4 @@ function loadBillboardData() {
     });
 }
   
-export { loadBillboardData };
+export { loadInteractiveZones };

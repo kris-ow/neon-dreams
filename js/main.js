@@ -1,12 +1,12 @@
-import { loadBillboardData } from './modules/billboardLoader.js';
+import { loadInteractiveZones } from './modules/zoneLoader.js';
 import { setupButtonHandlers, setupApartmentPopup } from './modules/buttonHandlers.js';
 import { setupParallax } from './modules/parallax.js';
 
 console.log("Welcome to the Neon Dreams!");
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadBillboardData();
+  loadInteractiveZones();
   setupButtonHandlers();
   setupParallax();
-  setupApartmentPopup();
+  setupApartmentPopup('ap3-hover', 'ap3-popup');
 });

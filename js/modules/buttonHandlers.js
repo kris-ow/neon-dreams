@@ -49,20 +49,20 @@ function setupButtonHandlers() {
   
 export { setupButtonHandlers };
 
-export function setupApartmentPopup() {
-    const ap3Hover = document.getElementById('ap3-hover');
-    const popup = document.getElementById('apartment-popup');
+export function setupApartmentPopup(hoverId, popupId) {
+    const hoverElement = document.getElementById('ap3-hover');
+    const popupElement = document.getElementById('ap3-popup');
   
-    if (!ap3Hover || !popup) {
-      console.warn('Apartment hover or popup element not found.');
+    if (!hoverElement || !popupElement) {
+      console.warn(`Popup setup failed: Elements with IDs '${hoverId}' or '${popupId}' not found.`);
       return;
     }
   
-    ap3Hover.addEventListener('click', () => {
-      popup.classList.remove('hidden');
+    hoverElement.addEventListener('click', () => {
+      popupElement.classList.remove('hidden');
     });
   
-    popup.addEventListener('click', () => {
-      popup.classList.add('hidden');
+    popupElement.addEventListener('click', () => {
+      popupElement.classList.add('hidden');
     });
 }
