@@ -39,4 +39,4 @@ function loadBillboardData() {
     });
 }
   
-  export { loadBillboardData };
+export { loadBillboardData };
